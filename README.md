@@ -1,5 +1,5 @@
 # LimeLight
-> Disaster relief ecosystem to locate victims and coordinate operations
+> Disaster relief ecosystem
 
 ## Problem Statement
 
@@ -31,6 +31,7 @@ An individual using this application will be able to perform the following tasks
 * Assign himself to a zone and move out to help those in need
 * Dissociate himself from a zone when most probably everybody in the zone has been saved
 * Request reinforcements from the pool of users who are currently un-assigned
+* Assign a task to a user or group of users ( Would require admin privileges )
 * Communicate with other rescue workers or victims
 
 In this way **LimeLight** would provide an ecosystem to orchestrate rescue operations in a fast and elegant manner.
