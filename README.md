@@ -7,8 +7,7 @@ The site of a natural disaster is chaotic to its core. In a sense it symbolises 
 and no matter how well-trained the rescue workers are, they will definitely perform redundant actions owing to the fact that
 there is no singular entity governing and co-ordinating their actions in real-time. Some degree of co-ordination is still 
 achieved via cellular phones, walky takies etc but one cannot broadcast his actions clearly to everyone in his peer network 
-due to time constraints leading to unoptimized allocation of human resources on localised rescue operations. Hence, the presence
-of a governing entity is of paramount importance.
+due to time constraints leading to unoptimized allocation of human resources on localised rescue operations. Hence, the presence of a governing entity is of paramount importance.
 
 ## Enter LimeLight
 
@@ -29,15 +28,14 @@ the rescue workers and alloting manpower to each rescue zone. There would be mai
 * Medic - One who is responsible for providing first-aid treatment to the victims
 * Lifter - One who removes wreckage and pulls out victims from underneath
 
-There are only 3 roles in the initial draft but the infrastructure of the application would be such that it would allow defining
-any number of custom roles as per the requirements.
+There are only 3 roles in the initial draft but the infrastructure of the application would be such that it would allow defining any number of custom roles as per the requirements.
 
-Now comes the allocation of manpower. The manpower requirements of each zone would be estimated using machine learning.
+Now comes the allocation of manpower. The manpower requirements of each zone would be estimated using **machine learning**.
 For Ex:- A rescue zone containing 10 people might require 2 scouts, 5 lifters and 4 medics.
 In case the prediction is a bit off the mark, the rescue worker would have the full accessibility to change the requirements
 of a zone then and there.
 
-An user using this application will be able to perform the following tasks:-
+A user using this application will be able to perform the following tasks:-
 
 * View which zones are assigned to which users in the Map Overlay Mode
 * Assign himself to a zone and move out to help those in need
