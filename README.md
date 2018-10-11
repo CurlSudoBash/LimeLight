@@ -1,5 +1,5 @@
 # LimeLight
-> An application which promotes co-ordination among rescue workers
+> A disaster management ecosystem from the future
 
 ## Problem Statement
 
