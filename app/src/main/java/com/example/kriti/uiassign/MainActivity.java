@@ -1,5 +1,6 @@
 package com.example.kriti.uiassign;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,22 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void toastRescuer(View v) {
-
-        toastMsg("You are a rescuer now");
-
-    }
-
-    public void toastMedic(View v) {
-
-        toastMsg("You are a medic now");
-
-    }
-
     public void toastVictim(View v) {
 
         toastMsg("You are a victim now");
 
     }
 
+    public void tapRescuer(View view) {
+        toastMsg("You are a rescuer now");
+        Intent intent = new Intent(this, SpecifyRole.class);
+        startActivity(intent);
+    }
 }
