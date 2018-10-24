@@ -1,10 +1,13 @@
 package com.example.kriti.uiassign;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.kriti.uiassign.beans.*;
 
@@ -42,4 +45,19 @@ public class EventList extends AppCompatActivity {
         events.add(new Events("EVENT9"));
         events.add(new Events("EVENT10"));
     }
+
+    /*FloatingActionButton floatingActionButton =
+            (FloatingActionButton) findViewById(R.id.fab);
+
+    floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    });*/
+    public void addEvent(View view) {
+        Intent intent = new Intent(this, CreateEvent.class);
+        startActivity(intent);
+    }
+
 }
