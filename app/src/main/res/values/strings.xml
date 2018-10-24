@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UIAssign</string>
+    <string name="title_activity_event_list">EventList</string>
 </resources>
