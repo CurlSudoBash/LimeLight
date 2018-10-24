@@ -39,7 +39,7 @@
             android:textAlignment="center"
             android:layout_gravity="center"
             android:id="@+id/scout_button"
-            android:onClick="tapRescuer"></Button>
+            android:onClick="showEventList"></Button>
 
         <Button
             android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
             android:id="@+id/medic_button"
             android:background="@android:color/holo_green_dark"
             android:text="MEDIC"
-            android:onClick="toastVictim"></Button>
+            android:onClick="showEventList"></Button>
 
         <Button
             android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
             android:id="@+id/lifter_button"
             android:background="@android:color/holo_orange_light"
             android:text="LIFTER"
-            android:onClick="toastVictim"></Button>
+            android:onClick="showEventList"></Button>
     </LinearLayout>
 
 </RelativeLayout>
