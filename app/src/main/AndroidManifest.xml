@@ -27,7 +27,8 @@
         <activity
             android:name=".EventList"
             android:label="@string/title_activity_event_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CreateEvent"></activity>
     </application>
 
 </manifest>
