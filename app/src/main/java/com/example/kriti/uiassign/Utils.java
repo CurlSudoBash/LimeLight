@@ -22,7 +22,6 @@ public class Utils {
 
     public static String location;
 
-
     public static List<Events> events = new ArrayList<>();
 
     public static Map<String, String> locationMap = new HashMap<String, String>();
@@ -75,6 +74,14 @@ public class Utils {
         return payload;
     }
 
+    public static String listToPayload() {
+        String payload = "";
+        for (Events event : events) {
+            payload = payload + event.eventName + "|" + event.location + ",";
+        }
+        return payload;
+    }
+
     public static void updateMap(String response) {
         if(response.length() == 0) return;
         String[] entries = response.split(",");
@@ -90,7 +97,7 @@ public class Utils {
         String[] entries = response.split(",");
         for(String entry: entries) {
             String[] temp = entry.split("[|]");
-            events.add(new Events(temp[0]));
+            events.add(new Events(temp[0], temp[1]));
         }
     }
 

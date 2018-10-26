@@ -23,9 +23,12 @@
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:textAlignment="viewStart" />
+
         <EditText
+            android:id="@+id/eventName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="text" />
         <TextView
             android:layout_width="match_parent"
             android:text="AREA COORDINATOR"
