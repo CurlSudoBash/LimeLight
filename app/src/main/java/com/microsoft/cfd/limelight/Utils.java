@@ -100,7 +100,7 @@ public class Utils {
         String[] entries = response.split(",");
         for(String entry: entries) {
             String[] temp = entry.split("[|]");
-            events.add(new Events(temp[0], temp[1]));
+            events.add(new Events(temp[0], temp[1], R.drawable.marker, "A", "Earthquake"));
         }
     }
 

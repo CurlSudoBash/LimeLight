@@ -28,7 +28,8 @@ public class EventList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mAdapter = new EventAdapter(Utils.events);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this));
+        mAdapter = new EventAdapter(getApplicationContext(), Utils.events);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -54,15 +55,6 @@ public class EventList extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    /*FloatingActionButton floatingActionButton =
-            (FloatingActionButton) findViewById(R.id.fab);
-
-    floatingActionButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        }
-    });*/
     public void addEvent(View view) {
         Intent intent = new Intent(this, CreateEvent.class);
         startActivity(intent);

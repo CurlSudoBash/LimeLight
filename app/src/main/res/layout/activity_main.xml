@@ -51,5 +51,15 @@
             android:background="@android:color/holo_red_light"
             android:text="VICTIM"
             android:onClick="toastVictim"></Button>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:id="@+id/reminder_text"
+            android:layout_gravity="center_horizontal"
+            android:text="Turn on your WiFi and GPS to save yourself"
+            android:layout_marginTop="100dp"/>
+
     </LinearLayout>
 </RelativeLayout>

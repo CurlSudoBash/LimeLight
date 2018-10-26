@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitModule {
 
-    public static String BaseURL = "http://10.42.0.1:3000/";
+    public static String BaseURL = "http://172.30.26.23:3000/";
 
     public static void synchronize() {
 
