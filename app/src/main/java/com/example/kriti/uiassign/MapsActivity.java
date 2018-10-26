@@ -18,12 +18,14 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
+    private ClusterManager<MyItem> mClusterManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +49,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        for (Map.Entry<String, String> entry : Utils.locationMap.entrySet()) {
-            String locationString = entry.getValue();
-            Log.d("location", locationString);
-            String[] loc = locationString.split("_");
-            Double latx = Double.parseDouble(loc[0]);
-            Double longy = Double.parseDouble(loc[1]);
-            String role = loc[2];
-            LatLng temp = new LatLng(latx, longy);
-            mMap.addMarker(new MarkerOptions().position(temp));
-
-        }
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mClusterManager = new ClusterManager<MyItem>(this, mMap);
+        mMap.setOnCameraIdleListener(mClusterManager);
+        mMap.setOnMarkerClickListener(mClusterManager);
+
+        setLocations();
+
+/*
+            // Set some lat/lng coordinates to start with.
+            double lat = 51.5145160;
+            double lng = -0.1270060;
+
+            // Add ten cluster items in close proximity, for purposes of this example.
+            for (int i = 0; i < 10; i++) {
+                double offset = i / 60d;
+                lat = lat + offset;
+                lng = lng + offset;
+                MyItem offsetItem = new MyItem(lat, lng);
+                mClusterManager.addItem(offsetItem);
+            }
+
+
+            mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                @Override
+                public void onMapClick(LatLng latLng) {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
+                }
+            });*/
         mMap.setOnMarkerClickListener(this);
+
+        /*
+
         LatLng sydney = new LatLng(-34, 151);
         Circle circle = mMap.addCircle(new CircleOptions()
                 .center(sydney)
@@ -79,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
     }
 
     @Override
@@ -107,9 +128,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
         Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_LONG);
-       // Intent intent = new Intent(this, AssignActivity.class);
+        //Intent intent = new Intent(this, AssignAcitivity.class);
         //startActivity(intent);
         toast.show();
         return false;
+    }
+
+    public void setLocations() {
+        for (Map.Entry<String, String> entry : Utils.locationMap.entrySet()) {
+            String locationString = entry.getValue();
+            Log.d("location bhangda: ", locationString + "dobara");
+            String[] loc = locationString.split("_");
+            Double latx = Double.parseDouble(loc[0]);
+            Double longy = Double.parseDouble(loc[1]);
+            String role = loc[2];
+            int v = 0, r = 0;
+            String title = "";
+            if (role == "V") {
+                title = "Victim";
+            } else if (role == "S") {
+                title = "Scout";
+            } else if (role == "M") {
+                title = "Medic";
+            } else if (role == "L") {
+                title = "Lifter";
+            }
+            MyItem offsetItem = new MyItem(latx, longy, title, "");
+            mClusterManager.addItem(offsetItem);
+        }
     }
 }
