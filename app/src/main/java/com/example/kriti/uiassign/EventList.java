@@ -10,6 +10,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.kriti.uiassign.Retrofit.RetrofitModule;
 import com.example.kriti.uiassign.beans.*;
@@ -31,6 +33,24 @@ public class EventList extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        TextView tr = (TextView) view.findViewById(R.id.eventName);
+                        String eventName = tr.getText().toString();
+                        Log.d("Recycle", eventName);
+                        Intent intent = new Intent(EventList.this, MapsActivity.class);
+                        intent.putExtra("EventName", eventName);
+                        startActivity(intent);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
+
         mAdapter.notifyDataSetChanged();
     }
 

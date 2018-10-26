@@ -137,7 +137,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void setLocations() {
         for (Map.Entry<String, String> entry : Utils.locationMap.entrySet()) {
             String locationString = entry.getValue();
-            Log.d("location bhangda: ", locationString + "dobara");
             String[] loc = locationString.split("_");
             Double latx = Double.parseDouble(loc[0]);
             Double longy = Double.parseDouble(loc[1]);
