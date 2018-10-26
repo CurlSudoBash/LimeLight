@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -21,6 +22,9 @@ public class SpecifyRole extends AppCompatActivity {
 
     public void showEventList(View view) {
 
+        Button b = (Button) view;
+        String buttonText = b.getText().toString();
+        Utils.setRole(buttonText.substring(0,1));
         Intent intent = new Intent(this, EventList.class);
         startActivity(intent);
     }

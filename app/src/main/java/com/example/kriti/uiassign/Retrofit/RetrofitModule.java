@@ -34,8 +34,9 @@ public class RetrofitModule {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     if(response.body() == null) return;
-                    Log.d("RetrofitExample", response.body().string());
-                    Utils.updateMap(response.body().string());
+                    String res = response.body().string();
+                    Log.d("RetrofitExample", res);
+                    Utils.updateMap(res);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
