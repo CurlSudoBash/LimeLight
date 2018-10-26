@@ -128,8 +128,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
         Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_LONG);
-        //Intent intent = new Intent(this, AssignAcitivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, AssignActivity.class);
+        startActivity(intent);
         toast.show();
         return false;
     }
@@ -144,13 +144,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String role = loc[2];
             int v = 0, r = 0;
             String title = "";
-            if (role == "V") {
+            if (role.equals("V")) {
                 title = "Victim";
-            } else if (role == "S") {
+            } else if (role.equals("S")) {
                 title = "Scout";
-            } else if (role == "M") {
+            } else if (role.equals("M")) {
                 title = "Medic";
-            } else if (role == "L") {
+            } else if (role.equals("L")) {
                 title = "Lifter";
             }
             MyItem offsetItem = new MyItem(latx, longy, title, "");

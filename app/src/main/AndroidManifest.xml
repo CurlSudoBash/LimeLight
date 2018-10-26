@@ -84,7 +84,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AssignAcitivity"></activity>
+        <activity android:name=".AssignActivity"></activity>
     </application>
 
 </manifest>
