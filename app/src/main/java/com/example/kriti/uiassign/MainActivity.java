@@ -1,11 +1,14 @@
 package com.example.kriti.uiassign;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = "wifidirect";
     private boolean isWifiP2pEnabled = false;
     private boolean retryChannel = false;
+    static public final int REQUEST_LOCATION = 1;
 
     private final IntentFilter intentFilter = new IntentFilter();
     private BroadcastReceiver receiver = null;
@@ -51,8 +55,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         victimBtn = (Button) findViewById(R.id.victim_button);
         victimBtn.setOnClickListener(this);
 
-        Intent locationIntent = new Intent(this, com.example.kriti.uiassign.Services.LocationService.class);
-        //startService(locationIntent);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Intent locationIntent = new Intent(this, com.example.kriti.uiassign.Services.LocationService.class);
+            startService(locationIntent);
+        }
 
         Intent relayIntent = new Intent(this, com.example.kriti.uiassign.Services.RelayService.class);
         startService(relayIntent);
@@ -60,6 +68,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent apiIntent = new Intent(this, com.example.kriti.uiassign.Services.ServerSyncService.class);
         startService(apiIntent);
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_LOCATION) {
+            if(grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Intent locationIntent = new Intent(this, com.example.kriti.uiassign.Services.LocationService.class);
+                startService(locationIntent);
+             } else {
+                Toast.makeText(MainActivity.this, "Please grant us location permissions to ensure your safety",Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
 
     @Override
     public void onClick(View view) {
