@@ -3,13 +3,17 @@ package com.example.kriti.uiassign;
 import android.location.Location;
 import android.util.Log;
 
+import com.example.kriti.uiassign.beans.Events;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Utils {
@@ -17,6 +21,9 @@ public class Utils {
     public static String deviceId;
 
     public static String location;
+
+
+    public static List<Events> events = new ArrayList<>();
 
     public static Map<String, String> locationMap = new HashMap<String, String>();
 
@@ -70,11 +77,20 @@ public class Utils {
 
     public static void updateMap(String response) {
         if(response.length() == 0) return;
-        response = response.substring(0, response.length()-1);
         String[] entries = response.split(",");
         for(String entry: entries) {
-            String[] temp = entry.split("|");
+            String[] temp = entry.split("[|]");
             Utils.locationMap.put(temp[0],temp[1]);
+        }
+    }
+
+    public static void updateEvents(String response) {
+        if(response.length() == 0) return;
+        events.clear();
+        String[] entries = response.split(",");
+        for(String entry: entries) {
+            String[] temp = entry.split("[|]");
+            events.add(new Events(temp[0]));
         }
     }
 
