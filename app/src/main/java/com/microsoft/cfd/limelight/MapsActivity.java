@@ -25,7 +25,7 @@ import java.util.Map;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
-    private ClusterManager<MyItem> mClusterManager;
+    private static ClusterManager<MyItem> mClusterManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +134,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return false;
     }
 
-    public void setLocations() {
+    public static void setLocations() {
+        if(mClusterManager==null) return;
         for (Map.Entry<String, String> entry : Utils.locationMap.entrySet()) {
             String locationString = entry.getValue();
             String[] loc = locationString.split("_");

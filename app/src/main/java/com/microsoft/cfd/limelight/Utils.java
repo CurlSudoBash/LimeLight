@@ -91,6 +91,7 @@ public class Utils {
             String[] temp = entry.split("[|]");
             Utils.locationMap.put(temp[0],temp[1]);
         }
+        MapsActivity.setLocations();
     }
 
     public static void updateEvents(String response) {
