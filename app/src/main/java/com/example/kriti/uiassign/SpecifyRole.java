@@ -20,6 +20,7 @@ public class SpecifyRole extends AppCompatActivity {
     }
 
     public void showEventList(View view) {
+
         Intent intent = new Intent(this, EventList.class);
         startActivity(intent);
     }

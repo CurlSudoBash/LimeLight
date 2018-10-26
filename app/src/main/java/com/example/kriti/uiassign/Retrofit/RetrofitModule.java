@@ -3,6 +3,7 @@ package com.example.kriti.uiassign.Retrofit;
 
 import android.util.Log;
 
+import com.example.kriti.uiassign.EventAdapter;
 import com.example.kriti.uiassign.Utils;
 
 import java.io.IOException;
@@ -17,22 +18,52 @@ import retrofit2.Retrofit;
 
 public class RetrofitModule {
 
+    public static String BaseURL = "http://10.42.0.1:3000/";
+
     public static void synchronize() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.25.17.232:3000/")
+                .baseUrl(BaseURL)
                 .build();
 
         API api = retrofit.create(API.class);
         String payload = Utils.mapToPayload(Utils.locationMap);
         RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
-        api.postUser(requestBody).enqueue(new Callback<ResponseBody>() {
+        api.syncMap(requestBody).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     if(response.body() == null) return;
                     Log.d("RetrofitExample", response.body().string());
                     Utils.updateMap(response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    public static void fetchEvents() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        api.getEvents().enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    if(response.body() == null) return;
+                    String res = response.body().string();
+                    Log.d("Events", res);
+                    Utils.updateEvents(res);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -47,6 +47,7 @@ public class ServerSyncService extends Service {
                 @Override
                 public void run() {
                     RetrofitModule.synchronize();
+                    RetrofitModule.fetchEvents();
                 }
 
             });
