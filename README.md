@@ -12,7 +12,7 @@ For example, consider the scenario of an earthquake. The best present-day relief
 
 ## Enter LimeLight
 
-**LimeLight** is a disaster management ecosystem which allows rescue operations to be carried out in the best possible manner. It would comprise of an android application and a central server.
+**LimeLight** is a disaster management ecosystem which allows rescue operations to be carried out in the best possible manner. It would comprise of an android application and a central server [LimeLightCentrum](https://github.com/CurlSudoBash/LimeLightCentrum).
 
 The first step is locating victims. The mobile phones of victims will continuously send POST requests to a central server with their location as the payload. This location polling can be implemented in two ways: it could either be a persistent sending of location data at regular intervals, or it could be triggered by a governing authority at a specific location in the event of a disaster.
 
