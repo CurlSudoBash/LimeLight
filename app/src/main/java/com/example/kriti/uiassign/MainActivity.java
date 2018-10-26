@@ -16,10 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener,
-        WifiP2pManager.ChannelListener {
+public class MainActivity extends AppCompatActivity implements WifiP2pManager.ChannelListener {
 
-    Button victimBtn;
     public static final String TAG = "wifidirect";
     private boolean isWifiP2pEnabled = false;
     private boolean retryChannel = false;
@@ -50,11 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Utils.deviceId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        Log.d("Mah Id", Utils.deviceId);
-
-        victimBtn = (Button) findViewById(R.id.victim_button);
-        victimBtn.setOnClickListener(this);
-
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         } else {
@@ -82,13 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    @Override
-    public void onClick(View view) {
-
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
-    }
-
     public void toastMsg(String msg) {
 
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
@@ -99,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void toastVictim(View v) {
 
         toastMsg("You are a victim now");
+        Utils.setRole("V");
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
 
     }
 

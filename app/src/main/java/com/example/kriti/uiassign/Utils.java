@@ -22,6 +22,8 @@ public class Utils {
 
     public static String location;
 
+    public static String role = "X";
+
     public static List<Events> events = new ArrayList<>();
 
     public static Map<String, String> locationMap = new HashMap<String, String>();
@@ -61,7 +63,7 @@ public class Utils {
 
     public static void updateLocation(Location location) {
         Utils.location = Utils.locationToString(location);
-        Utils.locationMap.put(Utils.deviceId, Utils.location);
+        Utils.locationMap.put(Utils.deviceId, Utils.location+"_"+Utils.role);
     }
 
     public static String mapToPayload(Map<String, String> locationMap) {
@@ -83,6 +85,7 @@ public class Utils {
     }
 
     public static void updateMap(String response) {
+        Log.d("Coffee is good", response + "kuch aaya");
         if(response.length() == 0) return;
         String[] entries = response.split(",");
         for(String entry: entries) {
@@ -103,6 +106,12 @@ public class Utils {
 
     public static String locationToString(Location location) {
         return Location.convert(location.getLatitude(), Location.FORMAT_DEGREES) + "_" + Location.convert(location.getLongitude(), Location.FORMAT_DEGREES);
+    }
+
+    public static void setRole(String role) {
+        Utils.role = role;
+        String newEntry = Utils.location + "_" + role;
+        Utils.locationMap.put(Utils.deviceId, newEntry);
     }
 
 }
