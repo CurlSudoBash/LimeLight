@@ -15,4 +15,7 @@ public interface API {
 
     @GET("/events")
     Call<ResponseBody> getEvents();
+
+    @POST("/events")
+    Call<ResponseBody> createEvent(@Body RequestBody requestBody);
 }

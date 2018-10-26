@@ -34,10 +34,6 @@ public class EventList extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    private void populateEventDetails() {
-//        events.add(new Events("EVENT1"));
-    }
-
     /*FloatingActionButton floatingActionButton =
             (FloatingActionButton) findViewById(R.id.fab);
 

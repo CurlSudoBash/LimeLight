@@ -49,6 +49,37 @@ public class RetrofitModule {
 
     }
 
+    public static void createEvent(String eventName) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        String payload = eventName + "|" + Utils.location;
+        Log.d("Create Payload", payload);
+        RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
+        api.createEvent(requestBody).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    if(response.body() == null) return;
+                    Log.d("Event created", response.body().string());
+                    String res = response.body().string();
+                    Utils.updateEvents(res);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+
     public static void fetchEvents() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -62,7 +93,6 @@ public class RetrofitModule {
                 try {
                     if(response.body() == null) return;
                     String res = response.body().string();
-                    Log.d("Events", res);
                     Utils.updateEvents(res);
                 } catch (IOException e) {
                     e.printStackTrace();

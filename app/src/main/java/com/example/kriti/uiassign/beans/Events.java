@@ -5,10 +5,12 @@ package com.example.kriti.uiassign.beans;
  */
 
 public class Events {
-    private String eventName;
+    public String eventName;
+    public String location;
 
-    public Events(String eventName) {
+    public Events(String eventName, String location) {
         this.eventName = eventName;
+        this.location = location;
     }
 
     public String getEventName() {
