@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.kriti.uiassign.EventList">
+    tools:context="com.microsoft.cfd.limelight.EventList">
     <!--tools:showIn="@layout/activity_event_list"-->
 
     <android.support.v7.widget.RecyclerView

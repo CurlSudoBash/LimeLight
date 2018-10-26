@@ -4,7 +4,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.example.kriti.uiassign"
+        applicationId "com.microsoft.cfd.limelight"
         minSdkVersion 23
         targetSdkVersion 23
         versionCode 1
