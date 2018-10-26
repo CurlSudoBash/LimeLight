@@ -85,6 +85,7 @@ public class Utils {
     }
 
     public static void updateMap(String response) {
+        Log.d("Coffee is good", response + "kuch aaya");
         if(response.length() == 0) return;
         String[] entries = response.split(",");
         for(String entry: entries) {
