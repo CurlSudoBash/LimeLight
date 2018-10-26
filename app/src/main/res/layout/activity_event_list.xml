@@ -27,11 +27,10 @@
         android:src="@drawable/ic_my_icon"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="14dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="14dp"
         android:elevation="5dp"
-        android:onClick="addEvent"/>
+        android:onClick="addEvent"
+        app:backgroundTint="@android:color/background_light"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
