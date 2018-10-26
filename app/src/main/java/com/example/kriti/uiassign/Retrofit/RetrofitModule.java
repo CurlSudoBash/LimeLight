@@ -57,14 +57,12 @@ public class RetrofitModule {
 
         API api = retrofit.create(API.class);
         String payload = eventName + "|" + Utils.location;
-        Log.d("Create Payload", payload);
         RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
         api.createEvent(requestBody).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     if(response.body() == null) return;
-                    Log.d("Event created", response.body().string());
                     String res = response.body().string();
                     Utils.updateEvents(res);
                 } catch (IOException e) {
