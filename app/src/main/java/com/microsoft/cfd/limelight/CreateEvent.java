@@ -22,8 +22,12 @@ public class CreateEvent extends AppCompatActivity {
     {
         EditText es = (EditText) findViewById(R.id.eventName);
         String eventName = es.getText().toString();
-        Utils.events.add(new Events(eventName, Utils.location, R.drawable.marker, "A", "Earthquake"));
-        RetrofitModule.createEvent(eventName);
+        es = (EditText) findViewById(R.id.coordinator);
+        String coordinator = es.getText().toString();
+        es = (EditText) findViewById(R.id.disaster);
+        String disaster = es.getText().toString();
+        Utils.events.add(new Events(eventName, Utils.location, R.drawable.marker, coordinator, disaster));
+        RetrofitModule.createEvent(eventName, coordinator, disaster);
         Toast toast = Toast.makeText(this, "Event created successfully", Toast.LENGTH_LONG);
         toast.show();
         Intent intent = new Intent(this, EventList.class);

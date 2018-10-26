@@ -38,7 +38,9 @@
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:textAlignment="viewStart" />
+
         <EditText
+            android:id="@+id/coordinator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
@@ -50,7 +52,9 @@
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:textAlignment="viewStart" />
+
         <EditText
+            android:id="@+id/disaster"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

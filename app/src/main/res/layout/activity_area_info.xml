@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/disaster_name"
-            android:text="DISASTER NAME"
+            android:text="EARTHQUAKE"
             android:textStyle="normal|bold"
             android:textAlignment="center"
             android:textSize="18sp" />

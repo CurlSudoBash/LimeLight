@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitModule {
 
-    public static String BaseURL = "http://172.30.26.23:3000/";
+    public static String BaseURL = "http://10.42.0.1:3000/";
 
     public static void synchronize() {
 
@@ -50,14 +50,14 @@ public class RetrofitModule {
 
     }
 
-    public static void createEvent(String eventName) {
+    public static void createEvent(String eventName, String coordinator, String disaster) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseURL)
                 .build();
 
         API api = retrofit.create(API.class);
-        String payload = eventName + "|" + Utils.location;
+        String payload = eventName + "|" + Utils.location + "_" + coordinator + "_" + disaster;
         RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
         api.createEvent(requestBody).enqueue(new Callback<ResponseBody>() {
             @Override

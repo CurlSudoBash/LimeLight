@@ -99,8 +99,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 toast.show();
             }
         });
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+        */
+        double lat = Double.parseDouble(Utils.location.split("_")[0]);
+        double lon = Double.parseDouble(Utils.location.split("_")[1]);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lon),12.0f));
     }
 
     @Override
@@ -128,7 +130,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public boolean onMarkerClick(Marker marker) {
         Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_LONG);
+        if(Utils.role.equals("V")) return false;
+        LatLng position = marker.getPosition();
         Intent intent = new Intent(this, AssignActivity.class);
+        intent.putExtra("Location", position.latitude+"_"+position.longitude);
         startActivity(intent);
         toast.show();
         return false;
