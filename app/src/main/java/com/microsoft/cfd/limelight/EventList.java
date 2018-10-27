@@ -42,6 +42,7 @@ public class EventList extends AppCompatActivity {
                         String eventName = tr.getText().toString();
                         Log.d("Recycle", eventName);
                         Intent intent = new Intent(EventList.this, MapsActivity.class);
+                        Utils.currentDisaster = eventName;
                         intent.putExtra("EventName", eventName);
                         startActivity(intent);
                     }

@@ -24,6 +24,10 @@ public class Utils {
 
     public static String role = "X";
 
+    public static String currentDisaster = "";
+
+    public static boolean assigned = false;
+
     public static List<Events> events = new ArrayList<>();
 
     public static Map<String, String> locationMap = new HashMap<String, String>();

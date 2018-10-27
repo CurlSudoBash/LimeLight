@@ -129,9 +129,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_SHORT);
         if(Utils.role.equals("V")) return false;
         LatLng position = marker.getPosition();
+        Log.d("Cluster Marker",position.latitude+"_"+position.longitude);
         Intent intent = new Intent(this, AssignActivity.class);
         intent.putExtra("Location", position.latitude+"_"+position.longitude);
         startActivity(intent);

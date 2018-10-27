@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitModule {
 
-    public static String BaseURL = "http://limelite.ml/";
+    public static String BaseURL = "http://10.42.0.1:3000/";
 
     public static void synchronize() {
 
@@ -102,6 +102,41 @@ public class RetrofitModule {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
             }
+        });
+
+    }
+
+    public static String fetchClusterInfo(String clusterId) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        String response = "";
+        try {
+            response = api.fetchClusterInfo(clusterId).execute().body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public static void updateCluster(String clusterId, String role) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        String payload = clusterId + "|" + role;
+        RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
+        api.updateCluster(requestBody).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {}
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {}
         });
 
     }
