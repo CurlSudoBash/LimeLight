@@ -18,11 +18,12 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.Map;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener{
 
     private GoogleMap mMap;
     private static ClusterManager<MyItem> mClusterManager;
@@ -50,56 +51,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mClusterManager = new ClusterManager<MyItem>(this, mMap);
-        mMap.setOnCameraIdleListener(mClusterManager);
-        mMap.setOnMarkerClickListener(mClusterManager);
 
-        setLocations();
-
-/*
-            // Set some lat/lng coordinates to start with.
-            double lat = 51.5145160;
-            double lng = -0.1270060;
-
-            // Add ten cluster items in close proximity, for purposes of this example.
-            for (int i = 0; i < 10; i++) {
-                double offset = i / 60d;
-                lat = lat + offset;
-                lng = lng + offset;
-                MyItem offsetItem = new MyItem(lat, lng);
-                mClusterManager.addItem(offsetItem);
-            }
-
-
-            mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-                @Override
-                public void onMapClick(LatLng latLng) {
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
-                }
-            });*/
-        mMap.setOnMarkerClickListener(this);
-
-        /*
-
-        LatLng sydney = new LatLng(-34, 151);
-        Circle circle = mMap.addCircle(new CircleOptions()
-                .center(sydney)
-                .radius(10000)
-                .strokeColor(Color.RED)
-                .fillColor(Color.BLUE));
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-
-        mMap.setOnCircleClickListener(new GoogleMap.OnCircleClickListener() {
+        mClusterManager.setOnClusterClickListener(new ClusterManager.OnClusterClickListener<MyItem>() {
             @Override
-            public void onCircleClick(Circle circle) {
-                Toast toast = Toast.makeText(MapsActivity.this, "Clicked circle", Toast.LENGTH_LONG);
-                // Intent intent = new Intent(this, AssignActivity.class);
-                //startActivity(intent);
-                toast.show();
+            public boolean onClusterClick(Cluster<MyItem> cluster) {
+                if(Utils.role.equals("V")) return false;
+                LatLng position = cluster.getPosition();
+                Log.d("Cluster Marker",position.latitude+"_"+position.longitude);
+                Intent intent = new Intent(MapsActivity.this, AssignActivity.class);
+                intent.putExtra("Location", position.latitude+"_"+position.longitude);
+                startActivity(intent);
+                return false;
             }
         });
-        */
+
+        mClusterManager.setOnClusterItemClickListener(new ClusterManager.OnClusterItemClickListener<MyItem>() {
+            @Override
+            public boolean onClusterItemClick(MyItem myItem) {
+                if(Utils.role.equals("V")) return false;
+                Toast toast = Toast.makeText(MapsActivity.this, "Zoom out and click on cluster", Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        mMap.setOnCameraIdleListener(mClusterManager);
+        mMap.setOnMarkerClickListener(mClusterManager);
+        setLocations();
         double lat = Double.parseDouble(Utils.location.split("_")[0]);
         double lon = Double.parseDouble(Utils.location.split("_")[1]);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lon),12.0f));
@@ -129,13 +108,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast toast = Toast.makeText(this, "Clicked marker", Toast.LENGTH_SHORT);
         if(Utils.role.equals("V")) return false;
-        LatLng position = marker.getPosition();
-        Log.d("Cluster Marker",position.latitude+"_"+position.longitude);
-        Intent intent = new Intent(this, AssignActivity.class);
-        intent.putExtra("Location", position.latitude+"_"+position.longitude);
-        startActivity(intent);
+        Toast toast = Toast.makeText(this, "Zoom out and click on cluster", Toast.LENGTH_SHORT);
         toast.show();
         return false;
     }
