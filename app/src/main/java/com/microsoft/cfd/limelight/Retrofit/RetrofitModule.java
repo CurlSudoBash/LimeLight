@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitModule {
 
-    public static String BaseURL = "http://13.67.90.99/";
+    public static String BaseURL = "https://limelite.ml/";
 
     public static void synchronize() {
 
