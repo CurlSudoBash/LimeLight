@@ -26,4 +26,7 @@ public interface API {
 
     @POST("/cluster")
     Call<ResponseBody> updateCluster(@Body RequestBody requestBody);
+
+    @POST("/reinforce")
+    Call<ResponseBody> requestReinforcements(@Body RequestBody requestBody);
 }

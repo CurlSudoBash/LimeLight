@@ -141,4 +141,23 @@ public class RetrofitModule {
 
     }
 
+    public static void requestReinforcements(String scouts, String medics, String lifters) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        String payload = Utils.location + "_" + scouts + "_" + medics + "_" + lifters;
+        RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), payload);
+        api.requestReinforcements(requestBody).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {}
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {}
+        });
+
+    }
+
 }

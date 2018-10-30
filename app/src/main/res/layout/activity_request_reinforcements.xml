@@ -23,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:weightSum="1">
@@ -45,7 +45,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:weightSum="1">
@@ -67,7 +67,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
             android:weightSum="1">
@@ -86,13 +86,15 @@
                 android:layout_marginLeft="250dp" />
 
         </LinearLayout>
+
         <Button
+            android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:text="REQUEST"
-            android:background="@android:color/holo_orange_dark" />
+            android:background="@android:color/holo_orange_dark"
+            android:text="REQUEST" />
     </LinearLayout>
 
 </RelativeLayout>
