@@ -25,7 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:weightSum="1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,14 +39,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/numberpick_scouts"
                 android:layout_gravity="right"
-                android:layout_marginLeft="250dp"/>
+                android:layout_marginLeft="250dp"
+                android:layout_weight="0.65" />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:weightSum="1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,14 +61,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/numberpick_medics"
                 android:layout_gravity="right"
-                android:layout_marginLeft="245dp"/>
+                android:layout_marginLeft="245dp"
+                android:layout_weight="0.59" />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:weightSum="1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,11 +79,11 @@
                 android:textSize="18sp"
                 android:gravity="center_vertical"/>
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="38dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/numberpick_lifters"
                 android:layout_gravity="right"
-                android:layout_marginLeft="250dp"/>
+                android:layout_marginLeft="250dp" />
 
         </LinearLayout>
         <Button
