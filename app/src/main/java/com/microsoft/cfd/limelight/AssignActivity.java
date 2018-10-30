@@ -106,5 +106,10 @@ public class AssignActivity extends AppCompatActivity {
 
     }
 
+   public void requestReinforcements(View view) {
+        Intent intent = new Intent(this, RequestReinforcements.class);
+        startActivity(intent);
+    } 
+
 
 }
