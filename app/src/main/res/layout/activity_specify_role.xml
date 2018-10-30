@@ -60,6 +60,15 @@
             android:background="@android:color/holo_orange_light"
             android:text="LIFTER"
             android:onClick="showEventList"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:id="@+id/custom_role_button"
+            android:text=" Add Custom Role"
+            />
     </LinearLayout>
 
 </RelativeLayout>

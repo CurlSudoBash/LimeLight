@@ -49,6 +49,7 @@
             android:label="@string/title_activity_event_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CreateEvent" />
+        <activity android:name=".RequestReinforcements" />
         <activity android:name=".MainActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

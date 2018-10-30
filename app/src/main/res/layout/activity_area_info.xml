@@ -107,5 +107,14 @@
             android:id="@+id/assign_yourself_button"
             android:text="ASSIGN YOURSELF"
             android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REQUEST REINFORCEMENTS"
+            android:id="@+id/request_reinforcements_button"
+            android:layout_marginTop="20dp"
+            android:onClick="requestReinforcements"/>
+
     </LinearLayout>
 </RelativeLayout>
