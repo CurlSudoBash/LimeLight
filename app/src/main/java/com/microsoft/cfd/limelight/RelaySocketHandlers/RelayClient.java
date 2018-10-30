@@ -1,7 +1,12 @@
 package com.microsoft.cfd.limelight.RelaySocketHandlers;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.microsoft.cfd.limelight.Utils;
 import com.microsoft.cfd.limelight.MainActivity;
@@ -20,10 +25,13 @@ public class RelayClient extends AsyncTask<Void, Void, String> {
     private static final int SOCKET_TIMEOUT = 5000;
     public String owner_address;
     public int owner_port;
+    public Context context;
 
-    public RelayClient(String group_owner_address, int group_owner_port) {
+
+    public RelayClient(String group_owner_address, int group_owner_port, Context c) {
         this.owner_address = group_owner_address;
         this.owner_port = group_owner_port;
+        this.context = c;
     }
 
     @Override
@@ -59,6 +67,19 @@ public class RelayClient extends AsyncTask<Void, Void, String> {
             Utils.updateMap(response);
 
             Log.d(MainActivity.TAG, "Client: Data written");
+
+            final Activity currentActivity = (Activity) context;
+
+            currentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(currentActivity,
+                            "Synchronized Locations with device " + Utils.deviceId,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
         } catch (IOException e) {
             Log.e(MainActivity.TAG, e.getMessage());
         } finally {

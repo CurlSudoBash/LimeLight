@@ -78,7 +78,7 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
                 // we are connected with the other device, request connection
                 // info to find group owner IP
 
-                ConnectionController connectionInfoListener = new ConnectionController();
+                ConnectionController connectionInfoListener = new ConnectionController(context);
                 manager.requestConnectionInfo(channel, connectionInfoListener);
             } else {
                 // It's a disconnect

@@ -1,7 +1,10 @@
 package com.microsoft.cfd.limelight.RelaySocketHandlers;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.microsoft.cfd.limelight.Utils;
 import com.microsoft.cfd.limelight.MainActivity;
@@ -16,6 +19,12 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class RelayServer extends AsyncTask<Void, Void, String> {
+
+    public Context context;
+
+    public RelayServer(Context c) {
+        this.context = c;
+    }
 
     @Override
     protected String doInBackground(Void... params) {
@@ -44,6 +53,18 @@ public class RelayServer extends AsyncTask<Void, Void, String> {
             Utils.copyLocation(is, out);
 
             serverSocket.close();
+
+            final Activity currentActivity = (Activity) context;
+
+            currentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(currentActivity,
+                            "Synchronized Locations with device " + Utils.deviceId,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
             return "/";
         } catch (IOException e) {
             Log.e(MainActivity.TAG, e.getMessage());

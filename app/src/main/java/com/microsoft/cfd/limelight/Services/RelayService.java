@@ -13,7 +13,7 @@ import java.util.TimerTask;
 
 public class RelayService extends Service {
     // constant
-    public static final long NOTIFY_INTERVAL = 300 * 1000; // 5 minutes
+    public static final long NOTIFY_INTERVAL = 60 * 1000; // 1 minute
 
     // run on another Thread to avoid crash
     private Handler mHandler = new Handler();
