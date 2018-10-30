@@ -48,7 +48,7 @@ public class RelayService extends Service {
                 @Override
                 public void run() {
                     Utils.peerTracker.clear();
-                    WiFiRelayProvider.discover();
+                    WiFiRelayProvider.discover(getApplicationContext());
                 }
 
             });

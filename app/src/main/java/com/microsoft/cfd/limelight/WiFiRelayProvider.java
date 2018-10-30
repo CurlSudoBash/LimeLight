@@ -1,11 +1,13 @@
 package com.microsoft.cfd.limelight;
 
+import android.content.Context;
 import android.net.wifi.WpsInfo;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.microsoft.cfd.limelight.Controllers.PeerController;
 
@@ -14,7 +16,7 @@ public class WiFiRelayProvider {
     public static WifiP2pManager manager;
     public static Channel channel;
 
-    public static void discover() {
+    public static void discover(final Context context) {
 
         manager.discoverPeers(channel, new WifiP2pManager.ActionListener() {
 
@@ -25,6 +27,10 @@ public class WiFiRelayProvider {
 
             @Override
             public void onFailure(int reasonCode) {
+                Toast.makeText(
+                        context,
+                        "Discovery Failed: Ensure that your WiFi is turned on",
+                        Toast.LENGTH_LONG).show();
                 Log.d("Relay Class", "Discovery Failed");
             }
         });
