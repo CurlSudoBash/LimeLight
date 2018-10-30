@@ -17,15 +17,8 @@ public class RequestReinforcements extends AppCompatActivity {
     public void setupUI()
     {
 
-        NumberPicker np1 = (NumberPicker) findViewById(R.id.numberpick_scouts);
-        NumberPicker np2 = (NumberPicker) findViewById(R.id.numberpick_medics);
-        NumberPicker np3 = (NumberPicker) findViewById(R.id.numberpick_lifters);
-
-        np1.setMaxValue(100);
-        np1.setMinValue(0);
-        np2.setMaxValue(100);
-        np2.setMinValue(0);
-        np3.setMaxValue(100);
-        np3.setMinValue(0);
+        EditText np1 = (EditText) findViewById(R.id.numberpick_scouts);
+        EditText np2 = (EditText) findViewById(R.id.numberpick_medics);
+        EditText np3 = (EditText) findViewById(R.id.numberpick_lifters);
     }
 }
