@@ -22,18 +22,19 @@ The first step is locating victims. The mobile phones of victims will continuous
 
 These locations would be rendered in a Google Map Interface in the rescuers' phones. A cluster of locations would comprise a rescue zone. By clicking on a marker in the map interface, information such as the number of devices in the cluster shall be visible. Now rescue operations can be carried out on a zonal basis. In case, there is no internet connectivity at a disaster site, the victims would be located via **Wifi Direct Channels** available in their phones. The range of a wifi direct channel is approximately 60 metres. Whenever a rescue worker steps within 60 metre radius of a victim, he would be notified of the victim's presence. Also the Wifi Direct Channels would play a crucial role in registering the location of a user on the server. If the user doesn't have an active internet connection, he would forward his location to someone within 60m and if that person has an internet connection he would register the sender's location else this process would continue again. As such the Wifi Direct Relay System ensures that everyone is located on the maps.
 
-The second step is carrying out the rescue operations in the most optimal manner. There are mainly two kinds of people involved in the relief effort:
+The second step is carrying out the rescue operations in the most optimal manner. There are mainly three kinds of people involved in the relief effort:
 
-* Rescuer - One who transfers victims from the disaster site
+* Scout - One who scouts a disaster site with respect to affected areas, number and location of victims etc
 * Medic - One who is responsible for providing first-aid treatment to the victims
+* Lifter - One who removes rubble, wreckage etc and pulls out victims from underneath
 
-Now comes the allocation of manpower. The manpower requirements of each zone would be estimated using **machine learning**. For Ex:- A rescue zone containing 10 people might require 5 rescuers and 3 medics. In case the prediction is a bit off the mark, the rescue worker would have the full accessibility to change the requirements of a zone then and there.
+Now comes the allocation of manpower. The manpower requirements of each zone would be estimated using **machine learning**. For Ex:- A rescue zone containing 10 victims might require 1 scouts, 3 medics and 2 lifters. In case the prediction is a bit off the mark, the rescue worker would have the full accessibility to change the requirements of a zone then and there.
 
 An individual using this application will be able to perform the following tasks:-
 
-* View the number of rescuers and medics present in a zone
+* View the number of scouts, medics and lifters present in a zone
 * Assign himself to a zone and move out to help those in need
-* Dissociate himself from a zone when most probably everybody in the zone has been saved
+* Dissociate himself from a zone when in the zone has been saved
 * Request reinforcements from the pool of users who are currently un-assigned
 * Assign a task to a user or group of users ( Would require admin privileges )
 * Communicate with other rescue workers or victims
