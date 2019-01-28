@@ -158,6 +158,14 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             }
         });
 
+        Button needHelp = (Button) findViewById(R.id.needHelpButton);
+        needHelp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

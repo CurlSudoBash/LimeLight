@@ -86,7 +86,8 @@
             android:exported="true" />
 
         <activity android:name=".AssignActivity"></activity>
-        <activity android:name=".ViewPagerActivity"></activity>
+        <activity android:name=".ViewPagerActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
