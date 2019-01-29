@@ -29,4 +29,7 @@ public interface API {
 
     @POST("/reinforce")
     Call<ResponseBody> requestReinforcements(@Body RequestBody requestBody);
+
+    @POST("/spot")
+    Call<ResponseBody> markVictims(@Body RequestBody requestBody);
 }

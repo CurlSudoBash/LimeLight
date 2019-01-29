@@ -160,4 +160,22 @@ public class RetrofitModule {
 
     }
 
+    public static void markVictims(String location) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BaseURL)
+                .build();
+
+        API api = retrofit.create(API.class);
+        RequestBody requestBody =  RequestBody.create(MediaType.parse("text/plain"), location);
+        api.markVictims(requestBody).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {}
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {}
+        });
+
+    }
+
 }
