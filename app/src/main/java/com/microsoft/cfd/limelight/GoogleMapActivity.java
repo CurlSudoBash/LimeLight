@@ -5,6 +5,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -28,18 +30,20 @@ import java.util.Map;
 public class GoogleMapActivity extends Fragment implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener{
     private GoogleMap mMap;
     private static ClusterManager<MyItem> mClusterManager;
-
+    private FragmentActivity myContext;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_maps, container, false);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
         return view;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mClusterManager = new ClusterManager<MyItem>(getActivity(), mMap);
+        mClusterManager = new ClusterManager<MyItem>(getContext(), mMap);
 
         mClusterManager.setOnClusterClickListener(new ClusterManager.OnClusterClickListener<MyItem>() {
             @Override
@@ -97,7 +101,7 @@ public class GoogleMapActivity extends Fragment implements OnMapReadyCallback, L
     @Override
     public boolean onMarkerClick(Marker marker) {
         if(Utils.role.equals("V")) return false;
-        Toast toast = Toast.makeText(getActivity(), "Zoom out and click on cluster", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getContext(), "Zoom out and click on cluster", Toast.LENGTH_SHORT);
         toast.show();
         return false;
     }
