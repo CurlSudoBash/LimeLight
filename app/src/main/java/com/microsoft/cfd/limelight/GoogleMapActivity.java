@@ -124,6 +124,8 @@ public class GoogleMapActivity extends Fragment implements OnMapReadyCallback, L
                 title = "Medic";
             } else if (role.equals("L")) {
                 title = "Lifter";
+            } else {
+                title = "Unknown";
             }
             MyItem offsetItem = new MyItem(latx, longy, title, "");
             mClusterManager.addItem(offsetItem);
