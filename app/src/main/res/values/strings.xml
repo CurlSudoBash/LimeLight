@@ -2,4 +2,5 @@
     <string name="app_name">LimeLight</string>
     <string name="title_activity_event_list">EventList</string>
     <string name="title_activity_maps">Map</string>
+    <string name="input_placeholder">Write a message</string>
 </resources>
