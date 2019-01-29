@@ -166,6 +166,14 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             }
         });
 
+        Button mondayEdit= (Button)findViewById(R.id.safeButton);
+        mondayEdit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            Intent intent = new Intent(getApplicationContext(), SafeMarkedActivity.class);
+            startActivity(intent);
+            }
+        });
+
     }
 
     @Override

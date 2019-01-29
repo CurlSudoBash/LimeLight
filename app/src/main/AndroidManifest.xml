@@ -88,6 +88,7 @@
         <activity android:name=".AssignActivity"></activity>
         <activity android:name=".ViewPagerActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SafeMarkedActivity"></activity>
     </application>
 
 </manifest>
