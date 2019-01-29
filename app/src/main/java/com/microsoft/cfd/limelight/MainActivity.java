@@ -124,7 +124,12 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
                             // Get user data from popup dialog editeext.
                             String userName = userNameEditText.getText().toString();
                             String password = passwordEditText.getText().toString();
-
+                            Log.d("password", password);
+                            if (password.equals("limelight")) {
+                                Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
+                                startActivity(intent);
+                            }
+/*
                             // Create data for the listview.
                             String[] titleArr = { "User Name", "Password"};
                             String[] dataArr = {userName, password};
@@ -138,11 +143,9 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
                                 listItemMap.put("data", dataArr[i]);
                                 itemDataList.add(listItemMap);
                             }
-
+*/
                             /*SimpleAdapter simpleAdapter = new SimpleAdapter(MainActivity.this,itemDataList,android.R.layout.simple_list_item_2,
                                     new String[]{"title","data"},new int[]{android.R.id.text1,android.R.id.text2});*/
-
-
 
                             alertDialog.cancel();
                         }
