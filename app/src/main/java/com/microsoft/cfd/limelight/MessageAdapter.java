@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.R;
 public class MessageAdapter extends BaseAdapter {
 
     List<Message> messages = new ArrayList<Message>();

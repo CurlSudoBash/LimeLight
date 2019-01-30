@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.microsoft.cfd.limelight">
+    package="com">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -44,14 +44,14 @@
         android:required="true" />
 
     <application
-        android:name=".DroneInterface.flight.FreeFlightApplication"
+        android:name=".parrot.freeflight.FreeFlightApplication"
         android:allowBackup="true"
         android:icon="@drawable/earth"
         android:allowClearUserData="true"
         android:label="LimeLight"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
+        <activity android:name=".microsoft.cfd.limelight.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,23 +60,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SpecifyRole"
-            android:parentActivityName=".MainActivity">
+            android:name=".microsoft.cfd.limelight.SpecifyRole"
+            android:parentActivityName=".microsoft.cfd.limelight.MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".microsoft.cfd.limelight.MainActivity" />
         </activity>
         <activity
-            android:name=".EventList"
+            android:name=".microsoft.cfd.limelight.EventList"
             android:label="@string/title_activity_event_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CreateEvent" />
+        <activity android:name=".microsoft.cfd.limelight.CreateEvent" />
         <activity
-            android:name=".RequestReinforcements"
-            android:parentActivityName=".AssignActivity"/>
-        <activity android:name=".MainActivity"></activity>
+            android:name=".microsoft.cfd.limelight.RequestReinforcements"
+            android:parentActivityName=".microsoft.cfd.limelight.AssignActivity"/>
+        <activity android:name=".microsoft.cfd.limelight.MainActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -94,39 +94,39 @@
             android:value="AIzaSyCJ08SSF3AzFrnJUz4RrUAlFE5CxvBqALk" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".microsoft.cfd.limelight.MapsActivity"
             android:label="@string/title_activity_maps" />
 
         <!-- Used for retrieving location at any point -->
         <service
-            android:name=".Services.LocationService"
+            android:name=".microsoft.cfd.limelight.Services.LocationService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name=".Services.ServerSyncService"
+            android:name=".microsoft.cfd.limelight.Services.ServerSyncService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name=".Services.RelayService"
+            android:name=".microsoft.cfd.limelight.Services.RelayService"
             android:enabled="true"
             android:exported="true" />
 
-        <service android:name=".DroneInterface.flight.transcodeservice.TranscodingService" />
-        <service android:name=".DroneInterface.flight.updater.FirmwareUpdateService" />
-        <service android:name=".DroneInterface.flight.service.DroneControlService" />
+        <service android:name=".parrot.freeflight.transcodeservice.TranscodingService" />
+        <service android:name=".parrot.freeflight.updater.FirmwareUpdateService" />
+        <service android:name=".parrot.freeflight.service.DroneControlService" />
 
         <activity
-            android:name=".AssignActivity"
-            android:parentActivityName=".ViewPagerActivity"></activity>
-        <activity android:name=".ViewPagerActivity"
+            android:name=".microsoft.cfd.limelight.AssignActivity"
+            android:parentActivityName=".microsoft.cfd.limelight.ViewPagerActivity"></activity>
+        <activity android:name=".microsoft.cfd.limelight.ViewPagerActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".microsoft.cfd.limelight.MainActivity"></activity>
         <activity
-            android:name=".SafeMarkedActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:name=".microsoft.cfd.limelight.SafeMarkedActivity"
+            android:parentActivityName=".microsoft.cfd.limelight.MainActivity"></activity>
 
         <activity
-            android:name=".DroneInterface.flight.activities.ConnectActivity"
+            android:name=".parrot.freeflight.activities.ConnectActivity"
             android:finishOnTaskLaunch="true"
             android:noHistory="true"
             android:screenOrientation="landscape"
@@ -134,7 +134,7 @@
             android:stateNotNeeded="true"/>
 
         <activity
-            android:name=".DroneInterface.flight.activities.ControlDroneActivity"
+            android:name=".parrot.freeflight.activities.ControlDroneActivity"
             android:configChanges="touchscreen|keyboardHidden|orientation"
             android:finishOnTaskLaunch="true"
             android:hardwareAccelerated="true"
@@ -143,7 +143,7 @@
             android:theme="@style/HudScreen" />
 
         <activity
-            android:name=".DroneInterface.flight.activities.DashboardActivity"
+            android:name=".parrot.freeflight.activities.DashboardActivity"
             android:finishOnTaskLaunch="true"
             android:hardwareAccelerated="false"
             android:launchMode="singleTask"

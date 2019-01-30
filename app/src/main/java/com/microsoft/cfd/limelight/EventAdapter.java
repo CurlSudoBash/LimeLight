@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 import com.microsoft.cfd.limelight.beans.Events;
 
 import java.util.List;
-
+import com.R;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.CustomViewHolder> {
     private List<Events> events;
     private Context context;

@@ -22,6 +22,9 @@ import android.widget.SimpleAdapter;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.R;
+import com.parrot.freeflight.activities.ConnectActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -175,6 +178,14 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             public void onClick(View v) {
             Intent intent = new Intent(getApplicationContext(), SafeMarkedActivity.class);
             startActivity(intent);
+            }
+        });
+
+        Button drojone= (Button)findViewById(R.id.drojone);
+        drojone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ConnectActivity.class);
+                startActivity(intent);
             }
         });
 

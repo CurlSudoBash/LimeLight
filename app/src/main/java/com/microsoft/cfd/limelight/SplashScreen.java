@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import com.R;
+
 public class SplashScreen extends Activity {
     RelativeLayout activitySplashScreen;
     @Override

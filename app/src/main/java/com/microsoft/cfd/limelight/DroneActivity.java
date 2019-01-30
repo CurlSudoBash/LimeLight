@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.R;
+
 public class DroneActivity extends Fragment {
 
     @Override

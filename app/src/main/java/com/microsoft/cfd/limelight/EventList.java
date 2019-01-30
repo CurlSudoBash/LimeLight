@@ -18,7 +18,7 @@ import com.microsoft.cfd.limelight.beans.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.R;
 public class EventList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EventAdapter mAdapter;

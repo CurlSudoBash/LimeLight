@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
 
 import okhttp3.internal.Util;
-
+import com.R;
 public class RequestReinforcements extends AppCompatActivity {
 
     EditText scouts;

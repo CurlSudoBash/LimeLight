@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.R;
 import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
 
 public class AssignActivity extends AppCompatActivity {

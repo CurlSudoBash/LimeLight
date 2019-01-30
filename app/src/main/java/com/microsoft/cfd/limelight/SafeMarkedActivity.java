@@ -4,7 +4,7 @@ import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-
+import com.R;
 public class SafeMarkedActivity extends AppCompatActivity {
 
     ImageView mImgCheck;
