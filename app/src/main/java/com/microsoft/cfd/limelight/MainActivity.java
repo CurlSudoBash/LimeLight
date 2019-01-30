@@ -181,14 +181,6 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             }
         });
 
-        Button drojone= (Button)findViewById(R.id.drojone);
-        drojone.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ConnectActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     @Override

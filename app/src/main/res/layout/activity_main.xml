@@ -97,11 +97,5 @@
             android:text="Turn on your WiFi and GPS to save yourself"
             android:layout_marginTop="100dp"/>
 
-        <Button
-            android:id="@+id/drojone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drone" />
-
     </LinearLayout>
 </RelativeLayout>
