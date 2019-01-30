@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             public void onClick(View v) {
                 Utils.setRole("V");
                 Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
+                intent.putExtra("USER", "VICTIM");
                 startActivity(intent);
             }
         });

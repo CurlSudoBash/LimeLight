@@ -1,9 +1,4 @@
-/*
- * FTPProgressListener
- *
- *  Created on: Sep 1, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.parrot.ftp;
 

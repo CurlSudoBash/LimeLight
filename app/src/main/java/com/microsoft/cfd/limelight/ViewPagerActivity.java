@@ -21,13 +21,19 @@ public class ViewPagerActivity extends AppCompatActivity implements TabLayout.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        String user = getIntent().getExtras().getString("USER");
+
         //Initializing the tablayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
         tabLayout.addTab(tabLayout.newTab().setText("Map"));
         tabLayout.addTab(tabLayout.newTab().setText("Chat"));
-        tabLayout.addTab(tabLayout.newTab().setText("Drone"));
+
+        if(user.equals("RESCUER")) {
+            tabLayout.addTab(tabLayout.newTab().setText("Drone"));
+        }
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Initializing viewPager

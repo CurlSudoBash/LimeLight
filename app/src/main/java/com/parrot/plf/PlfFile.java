@@ -1,9 +1,4 @@
-/*
- * PlfFile
- *
- *  Created on: Aug 30, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.parrot.plf;
 
