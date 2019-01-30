@@ -4,10 +4,6 @@ import android.content.Context;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-/**
- * EnhancedGestureDetector detects double tap gesture of second pointer when using multi touch in addition to
- * standard GestureDetecror gestures.
- */
 public class EnhancedGestureDetector extends GestureDetector
 {
     // This is minimal time interval between touches

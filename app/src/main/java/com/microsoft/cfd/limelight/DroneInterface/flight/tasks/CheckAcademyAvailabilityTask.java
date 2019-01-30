@@ -10,8 +10,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public class CheckAcademyAvailabilityTask extends AsyncTask<Context, Integer, Boolean>
 {

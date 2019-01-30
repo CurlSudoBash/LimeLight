@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.parrot.freeflight"
+    xmlns:app="http://schemas.android.com/apk/res/com.microsoft.cfd.limelight.DroneInterface.flight"
     android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center_vertical">
 
@@ -26,16 +26,13 @@
         android:layout_alignLeft="@+id/toggleAcceleroDisabled"
         android:layout_below="@+id/toggleAcceleroDisabled" android:layout_marginTop="@dimen/settings_vertical_gap"/>
 
-    <com.parrot.freeflight.ui.controls.ParrotSeekBar
+    <com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ParrotSeekBar
         android:id="@+id/seekDeviceTiltMax"
         android:layout_width="@dimen/settings_seek_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/toggleLeftHanded"
-        android:layout_below="@+id/toggleLeftHanded" android:textSize="@dimen/settings_text_small_size"   
-        app:lowerBoundText="5"
-        app:upperBoundText="50"   
-    	app:lowerValuePaddingLeft="@dimen/settings_seek_bounds_value_padding"
-    	app:upperValuePaddingRight="@dimen/settings_seek_bounds_value_padding"
+        android:layout_below="@+id/toggleLeftHanded" android:textSize="@dimen/settings_text_small_size"
+
         android:layout_marginTop="@dimen/settings_vertical_gap" android:layout_marginRight="@dimen/settings_pager_button_width"/>
 
     <TextView

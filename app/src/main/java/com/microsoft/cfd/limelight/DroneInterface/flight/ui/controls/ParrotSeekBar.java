@@ -11,8 +11,9 @@ import android.view.Gravity;
 import android.widget.SeekBar;
 import android.widget.TableLayout.LayoutParams;
 import android.widget.TextView;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public class ParrotSeekBar extends SeekBar {
 	

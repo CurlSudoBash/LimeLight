@@ -388,7 +388,7 @@ Java_com_parrot_freeflight_drone_DroneProxy_takeNavDataSnapshot(JNIEnv *env, job
 		if ((*env)->ExceptionOccurred(env)) {
 				(*env)->ExceptionDescribe(env);
 		}
-		LOGD(TAG, "Failed to get class com.parrot.freeflight.drone.NavData");
+		LOGD(TAG, "Failed to get class com.microsoft.cfd.limelight.DroneInterface.flight.drone.NavData");
 		return navdataObj;
 	}
 
@@ -448,7 +448,7 @@ Java_com_parrot_freeflight_drone_DroneProxy_takeConfigSnapshot(JNIEnv *env, jobj
 				(*env)->ExceptionDescribe(env);
 		}
 
-		LOGE(TAG, "Failed to get class com.parrot.freeflight.drone.DroneConfig");
+		LOGE(TAG, "Failed to get class com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig");
 		return configObj;
 	}
 

@@ -13,8 +13,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public final class StatusBar
 {

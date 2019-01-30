@@ -17,6 +17,8 @@ android {
             moduleName "adfreeflight"
         }
     }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -70,7 +72,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.android.support:appcompat-v7:22.2.0'
-    implementation 'com.android.support:recyclerview-v7:22.+'
+    implementation 'com.android.support:recyclerview-v7:22.2.0'
     implementation 'com.android.support:design:22.+'
     testImplementation 'junit:junit:4.12'
     implementation 'com.getbase:floatingactionbutton:1.9.0'
@@ -88,8 +90,12 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
 
     // Drone
-    implementation group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
-    implementation files('libs/android-support-v13.jar')
+    implementation (group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+//    implementation files('libs/android-support-v13.jar')
     implementation files('libs/com.sony.rdis.receiver-20111206.jar')
     implementation files('libs/com.sony.rdis.receiver.utility-20111206.jar')
 }

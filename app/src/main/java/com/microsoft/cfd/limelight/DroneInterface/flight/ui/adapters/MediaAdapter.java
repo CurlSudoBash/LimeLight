@@ -16,8 +16,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.tasks.MediaThumbnailExecutorManager;
 import com.microsoft.cfd.limelight.DroneInterface.flight.tasks.ThumbnailWorkerTaskDelegate;
 import com.microsoft.cfd.limelight.DroneInterface.flight.vo.MediaVO;

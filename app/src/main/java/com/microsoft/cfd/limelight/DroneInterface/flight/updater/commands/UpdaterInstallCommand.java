@@ -1,9 +1,4 @@
-/*
- * UpdaterInstallCommand
- *
- *  Created on: Jul 27, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.updater.commands;
 
@@ -12,9 +7,10 @@ import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.ConnectScreenViewController.IndicatorState;
 import com.microsoft.cfd.limelight.DroneInterface.flight.updater.UpdateManager;
+import com.microsoft.cfd.limelight.R;
 
 public class UpdaterInstallCommand 
 	extends UpdaterCommandBase

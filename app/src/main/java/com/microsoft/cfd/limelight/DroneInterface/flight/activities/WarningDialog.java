@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.FontUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class WarningDialog extends DialogFragment
         implements OnClickListener

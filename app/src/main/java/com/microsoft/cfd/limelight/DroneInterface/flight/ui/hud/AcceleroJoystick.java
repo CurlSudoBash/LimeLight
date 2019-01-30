@@ -8,8 +8,9 @@
 package com.microsoft.cfd.limelight.DroneInterface.flight.ui.hud;
 
 import android.content.Context;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public class AcceleroJoystick 
 	extends JoystickBase

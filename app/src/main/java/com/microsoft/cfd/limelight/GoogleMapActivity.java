@@ -26,6 +26,7 @@ import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 
 import java.util.Map;
+import android.support.v4.app.FragmentManager;
 
 public class GoogleMapActivity extends Fragment implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener{
     private GoogleMap mMap;

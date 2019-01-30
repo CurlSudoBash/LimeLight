@@ -16,8 +16,9 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.gl.GLSprite;
+import com.microsoft.cfd.limelight.R;
 
 public abstract class JoystickBase extends Sprite
 {

@@ -1,9 +1,4 @@
-/*
- * HudViewController
- *
- *  Created on: July 5, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.ui;
 
@@ -23,7 +18,7 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.NavData;
 import com.microsoft.cfd.limelight.DroneInterface.flight.gestures.EnhancedGestureDetector;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.hud.Button;
@@ -38,6 +33,7 @@ import com.microsoft.cfd.limelight.DroneInterface.flight.ui.hud.ToggleButton;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.FontUtils.TYPEFACE;
 import com.microsoft.cfd.limelight.DroneInterface.flight.video.VideoStageRenderer;
 import com.microsoft.cfd.limelight.DroneInterface.flight.video.VideoStageView;
+import com.microsoft.cfd.limelight.R;
 
 public class HudViewController 
 	implements OnTouchListener,

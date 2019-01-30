@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.parrot.freeflight"
+    xmlns:app="http://schemas.android.com/apk/res/com.microsoft.cfd.limelight.DroneInterface.flight"
     android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center_vertical">
 
@@ -11,64 +11,47 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 
-    <com.parrot.freeflight.ui.controls.ParrotSeekBar
+    <com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ParrotSeekBar
         android:id="@+id/seekAltitudeLimit"
         android:layout_width="@dimen/settings_seek_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/view1"
         android:layout_below="@+id/view1"
         android:progress="0"
-      
-        app:lowerBoundText="3"
-        app:upperBoundText="100"   
+
         android:textSize="@dimen/settings_text_small_size"
-    	app:lowerValuePaddingLeft="@dimen/settings_seek_bounds_value_padding"
-    	app:upperValuePaddingRight="@dimen/settings_seek_bounds_value_padding"
        android:layout_marginRight="@dimen/settings_pager_button_width"/>
 
-    <com.parrot.freeflight.ui.controls.ParrotSeekBar
+    <com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ParrotSeekBar
         android:id="@+id/seekVerticalSpeedMax"
         android:layout_width="@dimen/settings_seek_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/seekAltitudeLimit"
         android:layout_below="@+id/seekAltitudeLimit"
         android:layout_marginTop="@dimen/settings_vertical_gap" 
-        
-        app:lowerBoundText="200"
-        app:upperBoundText="2000"   
+
         android:textSize="@dimen/settings_text_small_size"
-    	app:lowerValuePaddingLeft="@dimen/settings_seek_bounds_value_padding"
-    	app:upperValuePaddingRight="@dimen/settings_seek_bounds_value_padding"
     	android:layout_marginRight="@dimen/settings_pager_button_width"/>
 
-    <com.parrot.freeflight.ui.controls.ParrotSeekBar
+    <com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ParrotSeekBar
         android:id="@+id/seekYawSpeedMax"
         android:layout_width="@dimen/settings_seek_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/seekVerticalSpeedMax"
         android:layout_below="@+id/seekVerticalSpeedMax"
         android:layout_marginTop="@dimen/settings_vertical_gap" 
-        
-        app:lowerBoundText="40"
-        app:upperBoundText="350"   
+
         android:textSize="@dimen/settings_text_small_size"
-    	app:lowerValuePaddingLeft="@dimen/settings_seek_bounds_value_padding"
-    	app:upperValuePaddingRight="@dimen/settings_seek_bounds_value_padding"
         android:layout_marginRight="@dimen/settings_pager_button_width"/>
 
-    <com.parrot.freeflight.ui.controls.ParrotSeekBar
+    <com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ParrotSeekBar
         android:id="@+id/seekTiltMax"
         android:layout_width="@dimen/settings_seek_width"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/seekYawSpeedMax"
         android:layout_below="@+id/seekYawSpeedMax"
-        android:layout_marginTop="@dimen/settings_vertical_gap" 
-        
-        app:lowerBoundText="5"
-        app:upperBoundText="30"   
+        android:layout_marginTop="@dimen/settings_vertical_gap"
         android:textSize="@dimen/settings_text_small_size"
-    	app:lowerValuePaddingLeft="@dimen/settings_seek_bounds_value_padding"
-    	app:upperValuePaddingRight="@dimen/settings_seek_bounds_value_padding"
         android:layout_marginRight="@dimen/settings_pager_button_width"/>
 
     <TextView

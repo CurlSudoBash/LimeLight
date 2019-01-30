@@ -20,7 +20,7 @@ import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.activities.base.DashboardActivityBase;
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneAvailabilityDelegate;
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneAvailabilityReceiver;
@@ -41,6 +41,8 @@ import com.microsoft.cfd.limelight.DroneInterface.flight.tasks.CheckMediaAvailab
 import com.microsoft.cfd.limelight.DroneInterface.flight.transcodeservice.TranscodingService;
 import com.microsoft.cfd.limelight.DroneInterface.flight.updater.FirmwareUpdateService;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.GPSHelper;
+import com.microsoft.cfd.limelight.R;
+import com.microsoft.cfd.limelight.R;
 
 public class DashboardActivity extends DashboardActivityBase 
 implements 
@@ -175,70 +177,14 @@ implements
 
 
     @Override
-    protected boolean onStartFreeflight()
-    {
-        if (!droneOnNetwork)
-        {
+    protected boolean onStartFreeflight() {
+        if (!droneOnNetwork) {
             return false;
         }
 
         Intent connectActivity = new Intent(this, ConnectActivity.class);
         startActivity(connectActivity);
 
-        return true;
-    }
-    
-    
-    @Override
-    protected boolean onStartFirmwareUpdate() 
-    {
-        if (firmwareUpdateAvailable) {
-            if (mService != null && mService.isUSBInserted() && !FirmwareUpdateService.isRunning()) {
-                onNotifyAboutUSBStickRemove();
-            } else {              
-                Intent updatefirmwareActivity = new Intent(this, UpdateFirmwareActivity.class);
-                startActivity(updatefirmwareActivity);
-            }
-        }
-        
-        return firmwareUpdateAvailable;
-    }
-    
-    
-    protected void onUSBStickRemoveDialogDismissed()
-    {
-        Intent updatefirmwareActivity = new Intent(this, UpdateFirmwareActivity.class);
-        startActivity(updatefirmwareActivity);
-    }
-
-    
-    @Override
-    protected boolean onStartGuestSpace() 
-    {
-        Intent intent = new Intent(this, GuestSpaceActivity.class);
-        startActivity(intent);
-        
-        return true;
-    }
-    
-    
-    @Override
-    protected boolean onStartAcademy()
-    {
-        Intent intent = new Intent(this, BrowserActivity.class);
-        intent.putExtra(BrowserActivity.URL, getString(R.string.url_aa_register));
-        startActivity(intent);
-        
-        return true;
-    }
-    
-    
-    @Override
-    protected boolean onStartPhotosVideos()
-    {
-        Intent intent = new Intent(this, MediaActivity.class);
-        startActivity(intent);
-    
         return true;
     }
 
@@ -522,7 +468,6 @@ implements
             @Override
              public void run()
              {
-                onUSBStickRemoveDialogDismissed();
              } 
          };
          

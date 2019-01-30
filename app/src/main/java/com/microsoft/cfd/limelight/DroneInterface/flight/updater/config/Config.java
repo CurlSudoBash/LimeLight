@@ -1,9 +1,4 @@
-/*
- * Config
- *
- *  Created on: Sep 1, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.updater.config;
 
@@ -15,8 +10,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public class Config 
 {

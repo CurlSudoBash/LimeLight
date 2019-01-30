@@ -30,7 +30,7 @@
 #define kAPS 40		// Number of accelerometer() function calls by second
 
 //extern uint16_t default_image[VIDEO_WIDTH*VIDEO_HEIGHT];
-// This enum should match the constants defined in com.parrot.freeflight.drone.NavData class
+// This enum should match the constants defined in com.microsoft.cfd.limelight.DroneInterface.flight.drone.NavData class
 typedef enum _ERROR_STATE_
 {
 	ERROR_STATE_NONE,
@@ -54,7 +54,7 @@ typedef enum _ERROR_STATE_
 } ERROR_STATE;
 
 
-// This enum should match the constants defined in com.parrot.freeflight.drone.NavData class
+// This enum should match the constants defined in com.microsoft.cfd.limelight.DroneInterface.flight.drone.NavData class
 typedef enum {
 	NO_ALERT = 0,
 	VIDEO_CONNECTION_ALERT,
@@ -67,7 +67,7 @@ typedef enum {
 } ARDRONE_ALERT_STATE;
 
 
-// This enum should match the constants defined in com.parrot.freeflight.service.DroneControlService
+// This enum should match the constants defined in com.microsoft.cfd.limelight.DroneInterface.flight.service.DroneControlService
 typedef enum {
 	CONTROL_SET_YAW = 0,
 	CONTROL_SET_GAZ,

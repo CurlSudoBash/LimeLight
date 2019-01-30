@@ -17,8 +17,9 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.AnimationUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class VideoController implements OnClickListener, OnCompletionListener, OnSeekBarChangeListener
 {

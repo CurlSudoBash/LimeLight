@@ -1,9 +1,3 @@
-/*
- * VideoStageRenderer
- *
- *  Created on: May 20, 2011
- *      Author: Dmytro Baryskyy
- */
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.video;
 

@@ -1,9 +1,4 @@
-/*
- * UpdaterRestartDroneCommand
- *
- *  Created on: Jul 27, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.updater.commands;
 
@@ -13,12 +8,13 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
 import android.util.Log;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.ConnectScreenViewController.IndicatorState;
 import com.microsoft.cfd.limelight.DroneInterface.flight.updater.UpdateManager;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.FTPUtils;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.TelnetUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class UpdaterRestartDroneCommand 
 	extends UpdaterCommandBase

@@ -31,7 +31,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig;
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig.EDroneVersion;
 import com.microsoft.cfd.limelight.DroneInterface.flight.settings.ApplicationSettings;
@@ -40,6 +40,7 @@ import com.microsoft.cfd.limelight.DroneInterface.flight.ui.controls.ViewPagerIn
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.filters.NetworkNameFilter;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.listeners.OnSeekChangedListener;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.FontUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class SettingsViewController
         implements OnPageChangeListener,

@@ -1,10 +1,3 @@
-/*
- * TextureUtils
- *
- *  Created on: May 24, 2011
- *      Author: Dmytro Baryskyy
- */
-
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.utils;
 

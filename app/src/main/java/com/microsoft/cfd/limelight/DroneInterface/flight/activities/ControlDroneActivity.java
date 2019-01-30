@@ -1,9 +1,4 @@
-/*
- * ControlDroneActivity
- * 
- * Created on: May 5, 2011
- * Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.activities;
 
@@ -36,7 +31,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.microsoft.cfd.limelight.DroneInterface.flight.FreeFlightApplication;
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.activities.base.ParrotActivity;
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig;
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig.EDroneVersion;
@@ -80,6 +75,7 @@ import com.microsoft.cfd.limelight.DroneInterface.flight.ui.hud.JoystickFactory;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.hud.JoystickListener;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.NookUtils;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.SystemUtils;
+import com.microsoft.cfd.limelight.R;
 
 @SuppressLint("NewApi")
 public class ControlDroneActivity

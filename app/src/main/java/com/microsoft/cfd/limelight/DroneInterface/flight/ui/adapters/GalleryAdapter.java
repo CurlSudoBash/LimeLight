@@ -15,9 +15,10 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.tasks.LoadMediaThumbTask;
 import com.microsoft.cfd.limelight.DroneInterface.flight.vo.MediaVO;
+import com.microsoft.cfd.limelight.R;
 
 public class GalleryAdapter
         extends PagerAdapter

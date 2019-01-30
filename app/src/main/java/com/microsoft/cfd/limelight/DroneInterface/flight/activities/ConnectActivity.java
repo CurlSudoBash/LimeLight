@@ -20,7 +20,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.activities.base.ParrotActivity;
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneConnectionChangeReceiverDelegate;
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneConnectionChangedReceiver;
@@ -28,6 +28,7 @@ import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneReadyRec
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.DroneReadyReceiverDelegate;
 import com.microsoft.cfd.limelight.DroneInterface.flight.service.DroneControlService;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.SystemUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class ConnectActivity
         extends ParrotActivity

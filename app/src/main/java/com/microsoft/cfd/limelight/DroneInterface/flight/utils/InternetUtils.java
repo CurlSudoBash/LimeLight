@@ -9,8 +9,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.content.Context;
 import android.os.Looper;
 import android.util.Log;
+import com.microsoft.cfd.limelight.R;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 
 public final class InternetUtils
 {

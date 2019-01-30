@@ -13,9 +13,10 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.activities.DashboardActivity;
 import com.microsoft.cfd.limelight.DroneInterface.flight.utils.AnimationUtils;
+import com.microsoft.cfd.limelight.R;
 
 public class ActionBar implements OnClickListener
 {

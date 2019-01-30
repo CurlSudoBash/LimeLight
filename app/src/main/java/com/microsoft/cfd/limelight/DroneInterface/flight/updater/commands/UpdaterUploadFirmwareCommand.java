@@ -1,9 +1,4 @@
-/*
- * UpdaterUploadFirmwareCommand
- *
- *  Created on: Jul 27, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.updater.commands;
 
@@ -14,7 +9,7 @@ import android.content.res.AssetManager;
 import android.os.Build;
 import android.util.Log;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.drone.DroneConfig;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.ConnectScreenViewController.IndicatorState;
 import com.microsoft.cfd.limelight.DroneInterface.flight.updater.UpdateManager;
@@ -25,6 +20,7 @@ import com.microsoft.cfd.limelight.DroneInterface.ftp.FTPClientStatus;
 import com.microsoft.cfd.limelight.DroneInterface.ftp.FTPClientStatus.FTPStatus;
 import com.microsoft.cfd.limelight.DroneInterface.ftp.FTPOperation;
 import com.microsoft.cfd.limelight.DroneInterface.ftp.FTPProgressListener;
+import com.microsoft.cfd.limelight.R;
 
 public class UpdaterUploadFirmwareCommand 
 	extends UpdaterCommandBase 

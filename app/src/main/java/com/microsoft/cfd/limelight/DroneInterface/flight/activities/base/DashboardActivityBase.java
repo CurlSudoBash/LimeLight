@@ -12,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.microsoft.cfd.limelight.DroneInterface.flight.R;
+
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.MediaStorageReceiver;
 import com.microsoft.cfd.limelight.DroneInterface.flight.receivers.MediaStorageReceiverDelegate;
 import com.microsoft.cfd.limelight.DroneInterface.flight.ui.StatusBar;
+import com.microsoft.cfd.limelight.R;
 
 @SuppressLint("Registered")
 // There is no need to register this activity in the manifest as this is a base activity for others.

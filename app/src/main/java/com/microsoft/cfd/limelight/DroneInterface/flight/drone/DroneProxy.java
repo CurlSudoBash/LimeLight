@@ -1,9 +1,4 @@
-/*
- * DroneProxy
- *
- *  Created on: May 5, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.microsoft.cfd.limelight.DroneInterface.flight.drone;
 
