@@ -165,4 +165,12 @@
     <string name="the_network_name_can_only_contain_alphanumeric_characters_and_underscores_and_must_not_be_longer_than_32_characters_">The network name can only contain alphanumeric characters and underscores, and must not be longer than 32 characters.</string>
     <string name="Bad_network_name">Bad network name</string>
     <string name="Please_insert_a_SD_card_in_your_Smartphone">Please insert a SD card in your Smartphone</string>
+
+
+        <string name="action_settings">Settings</string>
+        <string name="action_add_favourite">Add to Favourites</string>
+        <string name="action_play_next">Play Next</string>
+        <string name="backdrop_title"></string>
+        <string name="backdrop_subtitle"></string>
+
 </resources>
