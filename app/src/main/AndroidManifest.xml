@@ -44,8 +44,10 @@
         android:required="true" />
 
     <application
+        android:name=".DroneInterface.flight.FreeFlightApplication"
         android:allowBackup="true"
         android:icon="@drawable/earth"
+        android:allowClearUserData="true"
         android:label="LimeLight"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -113,13 +115,6 @@
         <service android:name=".DroneInterface.flight.updater.FirmwareUpdateService" />
         <service android:name=".DroneInterface.flight.service.DroneControlService" />
 
-        <uses-library
-            android:name="com.sony.btv.remotesensor"
-            android:required="false" />
-        <uses-library
-            android:name="com.google.android.tv"
-            android:required="false" />
-
         <activity
             android:name=".AssignActivity"
             android:parentActivityName=".ViewPagerActivity"></activity>
@@ -153,6 +148,13 @@
             android:hardwareAccelerated="false"
             android:launchMode="singleTask"
             android:screenOrientation="landscape" />
+
+        <uses-library
+            android:name="com.sony.btv.remotesensor"
+            android:required="false" />
+        <uses-library
+            android:name="com.google.android.tv"
+            android:required="false" />
 
 
     </application>
