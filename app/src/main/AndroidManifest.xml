@@ -127,8 +127,7 @@
 
         <activity
             android:name=".parrot.freeflight.activities.ConnectActivity"
-            android:finishOnTaskLaunch="true"
-            android:noHistory="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
             android:screenOrientation="landscape"
             android:excludeFromRecents="true"
             android:stateNotNeeded="true"/>
@@ -136,11 +135,11 @@
         <activity
             android:name=".parrot.freeflight.activities.ControlDroneActivity"
             android:configChanges="touchscreen|keyboardHidden|orientation"
-            android:finishOnTaskLaunch="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
-            android:theme="@style/HudScreen" />
+            android:parentActivityName=".microsoft.cfd.limelight.MainActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 
         <activity
             android:name=".parrot.freeflight.activities.DashboardActivity"

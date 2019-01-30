@@ -29,6 +29,7 @@ import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.microsoft.cfd.limelight.MainActivity;
 import com.parrot.freeflight.FreeFlightApplication;
 import com.R;
 import com.parrot.freeflight.activities.base.ParrotActivity;
@@ -943,7 +944,8 @@ public class ControlDroneActivity
     public void onBackPressed()
     {
         if (canGoBack()) {
-            super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         }
     }
     

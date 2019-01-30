@@ -61,9 +61,9 @@ public class ConnectActivity
         int tipNumber = random.nextInt(TIPS.length);
      
         if (!SystemUtils.isGoogleTV(this)) {
-            setContentView(TIPS[tipNumber]);
+            setContentView(R.layout.hint_screen_altitude);
         } else {
-            setContentView(R.layout.remote_instructions);
+            setContentView(R.layout.hint_screen_altitude);
             prepareGoogleTVControls();
         }
 
