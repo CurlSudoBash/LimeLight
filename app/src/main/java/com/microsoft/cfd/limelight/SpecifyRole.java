@@ -25,7 +25,7 @@ public class SpecifyRole extends AppCompatActivity {
         Button b = (Button) view;
         String buttonText = b.getText().toString();
         Utils.setRole(buttonText.substring(0,1));
-        Intent intent = new Intent(this, EventList.class);
+        Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
         startActivity(intent);
     }
 }

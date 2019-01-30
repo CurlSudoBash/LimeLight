@@ -38,7 +38,7 @@ public class RequestReinforcements extends AppCompatActivity {
                         RequestReinforcements.this,
                         "Request Successful",
                         Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
                 startActivity(intent);
             }
         });

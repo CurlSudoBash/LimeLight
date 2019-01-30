@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
                             String password = passwordEditText.getText().toString();
                             Log.d("password", password);
                             if (password.equals("limelight")) {
-                                Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), SpecifyRole.class);
                                 startActivity(intent);
                             }
 /*

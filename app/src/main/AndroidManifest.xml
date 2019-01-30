@@ -11,20 +11,42 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
 
     <uses-feature
         android:name="android.hardware.wifi.direct"
         android:required="true" />
     <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.faketouch.multitouch.distinct"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.multitouch.distinct"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/earth"
-        android:label="@string/app_name"
+        android:label="LimeLight"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SplashScreen"
@@ -49,7 +71,9 @@
             android:label="@string/title_activity_event_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CreateEvent" />
-        <activity android:name=".RequestReinforcements" />
+        <activity
+            android:name=".RequestReinforcements"
+            android:parentActivityName=".AssignActivity"/>
         <activity android:name=".MainActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -85,10 +109,52 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AssignActivity"></activity>
+        <service android:name=".DroneInterface.flight.transcodeservice.TranscodingService" />
+        <service android:name=".DroneInterface.flight.updater.FirmwareUpdateService" />
+        <service android:name=".DroneInterface.flight.service.DroneControlService" />
+
+        <uses-library
+            android:name="com.sony.btv.remotesensor"
+            android:required="false" />
+        <uses-library
+            android:name="com.google.android.tv"
+            android:required="false" />
+
+        <activity
+            android:name=".AssignActivity"
+            android:parentActivityName=".ViewPagerActivity"></activity>
         <activity android:name=".ViewPagerActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".SafeMarkedActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".SafeMarkedActivity"
+            android:parentActivityName=".MainActivity"></activity>
+
+        <activity
+            android:name=".DroneInterface.flight.activities.ConnectActivity"
+            android:finishOnTaskLaunch="true"
+            android:noHistory="true"
+            android:screenOrientation="landscape"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"/>
+
+        <activity
+            android:name=".DroneInterface.flight.activities.ControlDroneActivity"
+            android:configChanges="touchscreen|keyboardHidden|orientation"
+            android:finishOnTaskLaunch="true"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/HudScreen" />
+
+        <activity
+            android:name=".DroneInterface.flight.activities.DashboardActivity"
+            android:finishOnTaskLaunch="true"
+            android:hardwareAccelerated="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+
+
     </application>
 
 </manifest>
