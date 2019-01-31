@@ -35,6 +35,7 @@
             android:layout_marginTop="70dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/rounded_white"
+            android:textColor="@color/white"
             android:text="SCOUT"
             android:textAlignment="center"
             android:layout_gravity="center"
@@ -47,6 +48,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:id="@+id/medic_button"
+            android:textColor="@color/white"
             android:background="@drawable/rounded_white"
             android:text="MEDIC"
             android:onClick="showEventList"></Button>
@@ -58,17 +60,10 @@
             android:layout_marginTop="40dp"
             android:id="@+id/lifter_button"
             android:background="@drawable/rounded_white"
+            android:textColor="@color/white"
             android:text="LIFTER"
             android:onClick="showEventList"></Button>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:id="@+id/custom_role_button"
-            android:text=" Add Custom Role"
-            />
     </LinearLayout>
 
 </RelativeLayout>

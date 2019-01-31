@@ -1,9 +1,4 @@
-/*
- * HudViewController
- *
- *  Created on: July 5, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 package com.parrot.freeflight.ui;
 
@@ -24,6 +19,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
 import com.R;
+import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
+import com.microsoft.cfd.limelight.Utils;
 import com.parrot.freeflight.drone.NavData;
 import com.parrot.freeflight.gestures.EnhancedGestureDetector;
 import com.parrot.freeflight.ui.hud.Button;
@@ -72,6 +69,7 @@ public class HudViewController
 	private static final int USB_INDICATOR_TEXT_ID = 17;
 	private static final int BACK_BTN_ID = 18;
 	private static final int LAND_ID = 19;
+	private static final int MARK_ID = 20;
 	
 	private Image bottomBarBg;
 	
@@ -83,7 +81,9 @@ public class HudViewController
 	private Button btnPhoto;
 	private Button btnBack;
 	private ToggleButton btnRecord;
-	
+
+	private Button btnMark;
+
 	private Button[] buttons;
 	
 	private Indicator batteryIndicator;
@@ -158,7 +158,15 @@ public class HudViewController
 		btnTakeOff = new Button(res, R.drawable.btn_take_off_normal, R.drawable.btn_take_off_pressed, Align.BOTTOM_CENTER);		
 		btnLand = new Button(res, R.drawable.btn_landing, R.drawable.btn_landing_pressed, Align.BOTTOM_CENTER);      
 		btnLand.setVisible(false);
-		
+
+		btnMark = new Button(res,R.drawable.mark,R.drawable.mark,Align.BOTTOM_LEFT);
+		btnMark.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				RetrofitModule.markVictims(Utils.location);
+			}
+		});
+
 		Image topBarBg = new Image(res, R.drawable.barre_haut, Align.TOP_CENTER);
 		topBarBg.setSizeParams(SizeParams.FILL_SCREEN, SizeParams.NONE);
 		topBarBg.setAlphaEnabled(false);
@@ -255,6 +263,7 @@ public class HudViewController
 		renderer.addSprite(RECORD_LABEL_ID, txtRecord);
 		renderer.addSprite(USB_INDICATOR_ID, usbIndicator);
 		renderer.addSprite(USB_INDICATOR_TEXT_ID, txtUsbRemaining);
+//		renderer.addSprite(MARK_ID, btnMark);
 	}
 	
 	
