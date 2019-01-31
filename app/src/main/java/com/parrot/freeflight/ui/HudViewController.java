@@ -160,12 +160,6 @@ public class HudViewController
 		btnLand.setVisible(false);
 
 		btnMark = new Button(res,R.drawable.mark,R.drawable.mark,Align.BOTTOM_LEFT);
-		btnMark.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				RetrofitModule.markVictims(Utils.location);
-			}
-		});
 
 		Image topBarBg = new Image(res, R.drawable.barre_haut, Align.TOP_CENTER);
 		topBarBg.setSizeParams(SizeParams.FILL_SCREEN, SizeParams.NONE);
@@ -228,7 +222,7 @@ public class HudViewController
 		wifiIndicator = new Indicator(res, wifiIndicatorRes, Align.TOP_LEFT);
 		wifiIndicator.setMargin(0, 0, 0, (int)res.getDimension(R.dimen.hud_wifi_indicator_margin_left));
 		
-		buttons = new Button[8];
+		buttons = new Button[9];
 		buttons[0] = btnSettings;
 		buttons[1] = btnEmergency;
 		buttons[2] = btnTakeOff;
@@ -237,6 +231,7 @@ public class HudViewController
 		buttons[5] = btnRecord;
 		buttons[6] = btnCameraSwitch;
 		buttons[7] = btnBack;
+		buttons[8] = btnMark;
 		
 		
 		txtAlert = new Text(context, "", Align.TOP_CENTER);
@@ -263,7 +258,7 @@ public class HudViewController
 		renderer.addSprite(RECORD_LABEL_ID, txtRecord);
 		renderer.addSprite(USB_INDICATOR_ID, usbIndicator);
 		renderer.addSprite(USB_INDICATOR_TEXT_ID, txtUsbRemaining);
-//		renderer.addSprite(MARK_ID, btnMark);
+		renderer.addSprite(MARK_ID, btnMark);
 	}
 	
 	
@@ -566,7 +561,11 @@ public class HudViewController
 		this.btnTakeOff.setOnClickListener(listener);
 		this.btnLand.setOnClickListener(listener);
 	}
-	
+
+	public void setBtnMarkClickListener(OnClickListener listener)
+	{
+		this.btnMark.setOnClickListener(listener);
+	}
 
 	public void setBtnEmergencyClickListener(OnClickListener listener) 
 	{

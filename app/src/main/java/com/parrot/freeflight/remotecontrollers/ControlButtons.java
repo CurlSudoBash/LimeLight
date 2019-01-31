@@ -15,6 +15,7 @@ public class ControlButtons
     public final static String BUTTON_ROLL_FORWARD = "roll_forward";
     public final static String BUTTON_ROLL_BACKWARD = "roll_backward";
     public final static String BUTTON_TAKE_OFF = "take_off";
+    public final static String BUTTON_MARK = "mark";
     public final static String BUTTON_EMERGENCY = "emergency";
     public final static String BUTTON_CAMERA = "camera";
     public final static String BUTTON_SETTINGS = "menu";

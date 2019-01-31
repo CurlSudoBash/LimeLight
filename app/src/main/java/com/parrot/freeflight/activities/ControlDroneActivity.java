@@ -28,8 +28,11 @@ import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.microsoft.cfd.limelight.MainActivity;
+import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
+import com.microsoft.cfd.limelight.Utils;
 import com.parrot.freeflight.FreeFlightApplication;
 import com.R;
 import com.parrot.freeflight.activities.base.ParrotActivity;
@@ -435,6 +438,25 @@ public class ControlDroneActivity
             }
         });
 
+        this.buttonControllers.add(new ButtonPressedController(buttons.getButtonCode(ControlButtons.BUTTON_MARK))
+        {
+
+            @Override
+            public void onButtonReleased()
+            {
+                Toast.makeText(
+                        getApplicationContext(),
+                        "Victims Marked",
+                        Toast.LENGTH_SHORT).show();
+                RetrofitModule.markVictims(Utils.location);
+            }
+
+            @Override
+            public void onButtonPressed()
+            {
+            }
+        });
+
         this.buttonControllers.add(new ButtonPressedController(buttons.getButtonCode(ControlButtons.BUTTON_EMERGENCY))
         {
 
@@ -573,6 +595,19 @@ public class ControlDroneActivity
                 if (droneControlService != null) {
                     droneControlService.triggerTakeOff();
                 }
+            }
+        });
+
+        view.setBtnMarkClickListener(new OnClickListener()
+        {
+
+            public void onClick(View v)
+            {
+                Toast.makeText(
+                        getApplicationContext(),
+                        "Victims Marked",
+                        Toast.LENGTH_SHORT).show();
+                RetrofitModule.markVictims(Utils.location);
             }
         });
 
