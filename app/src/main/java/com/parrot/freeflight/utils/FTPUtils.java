@@ -1,9 +1,4 @@
-/*
- * FTPUtils
- *
- *  Created on: Sep 1, 2011
- *      Author: Dmytro Baryskyy
- */
+
 
 
 package com.parrot.freeflight.utils;

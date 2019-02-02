@@ -33,6 +33,7 @@ import android.widget.Toast;
 import com.microsoft.cfd.limelight.MainActivity;
 import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
 import com.microsoft.cfd.limelight.Utils;
+import com.microsoft.cfd.limelight.ViewPagerActivity;
 import com.parrot.freeflight.FreeFlightApplication;
 import com.R;
 import com.parrot.freeflight.activities.base.ParrotActivity;
@@ -645,7 +646,8 @@ public class ControlDroneActivity
         {
             public void onClick(View v)
             {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
+                startActivity(intent);
             }
         });
 

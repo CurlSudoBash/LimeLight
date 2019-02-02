@@ -23,6 +23,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.R;
+import com.microsoft.cfd.limelight.Retrofit.RetrofitModule;
 import com.parrot.freeflight.activities.ConnectActivity;
 
 import java.util.ArrayList;

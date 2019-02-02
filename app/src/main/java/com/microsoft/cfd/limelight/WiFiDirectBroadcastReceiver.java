@@ -54,7 +54,6 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
                 activity.setIsWifiP2pEnabled(false);
 
             }
-            Log.d(MainActivity.TAG, "P2P state changed - " + state);
         } else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
 
             // request available peers from the wifi p2p manager. This is an
@@ -63,7 +62,6 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
             if (manager != null) {
                 manager.requestPeers(channel, PeerController.peerListListener);
             }
-            Log.d(MainActivity.TAG, "P2P peers changed");
         } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
 
             if (manager == null) {

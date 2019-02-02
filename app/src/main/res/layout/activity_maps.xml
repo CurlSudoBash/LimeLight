@@ -6,7 +6,7 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GoogleMapActivity" />
+    tools:context=".microsoft.cfd.limelight.GoogleMapActivity" />
 <!--    <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.gms.maps.MapView
 xmlns:android="http://schemas.android.com/apk/res/android"

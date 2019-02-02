@@ -97,7 +97,7 @@ public class FTPClient
 	public boolean putSync(String localFilePath, String remoteFilePath)
 	{
 		if (busy) {
-			Log.w(TAG, "Can't put file. FTPClient is busy at the moment. Performing " + currOperation.name());
+			Log.e(TAG, "Can't put file. FTPClient is busy at the moment. Performing " + currOperation.name());
 			return false;
 		}
 		

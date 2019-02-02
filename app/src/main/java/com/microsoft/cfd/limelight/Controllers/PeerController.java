@@ -30,7 +30,6 @@ public class PeerController {
                 peers.addAll(peerList.getDeviceList());
                 // Perform any other updates needed based on the new list of
                 // peers connected to the Wi-Fi P2P network.
-            Log.d(":)","Got "+ peers.size() + " peers");
             if (peers.size() == 0) {
                 Log.d(MainActivity.TAG, "No devices found");
                 return;
