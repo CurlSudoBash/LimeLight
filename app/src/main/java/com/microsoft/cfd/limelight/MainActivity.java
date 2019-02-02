@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
                             String userName = userNameEditText.getText().toString();
                             String password = passwordEditText.getText().toString();
                             Log.d("password", password);
-                            if (password.equals("limelight")) {
+                            if (password.equals("a")) {
                                 Intent intent = new Intent(getApplicationContext(), SpecifyRole.class);
                                 startActivity(intent);
                             }
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
             public void onClick(View v) {
                 Utils.setRole("V");
                 Intent intent = new Intent(getApplicationContext(), ViewPagerActivity.class);
-                intent.putExtra("USER", "VICTIM");
+                Utils.drone = false;
                 startActivity(intent);
             }
         });

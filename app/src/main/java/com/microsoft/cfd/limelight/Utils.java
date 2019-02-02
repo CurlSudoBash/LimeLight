@@ -18,6 +18,8 @@ import java.util.Map;
 import com.R;
 public class Utils {
 
+    public static boolean drone = false;
+
     public static String deviceId;
 
     public static String location;

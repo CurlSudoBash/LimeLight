@@ -18,16 +18,13 @@ public class Pager extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch(position) {
             case 0:
-                GoogleMapActivity googleMapActivity = new GoogleMapActivity();
-                return googleMapActivity;
+                return new GoogleMapActivity();
             case 1:
-                ChatActivity chatActivity = new ChatActivity();
-                return chatActivity;
+                return new ChatActivity();
             case 2:
-                DroneActivity droneActivity = new DroneActivity();
-                return droneActivity;
+                return new DroneActivity();
             default:
-                return null;
+                return new GoogleMapActivity();
         }
     }
 
