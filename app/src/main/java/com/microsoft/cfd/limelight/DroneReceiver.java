@@ -62,9 +62,8 @@ public class DroneReceiver extends BroadcastReceiver {
                             "data.txt"
                     );
 
-                    Log.d("Drone Data", LocationData);
-
                     if(LocationData != null ) {
+                        Log.d("Drone Data", LocationData);
                         Utils.updateMap(LocationData);
                     }
 
