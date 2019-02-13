@@ -39,6 +39,8 @@ An individual using this application will be able to perform the following tasks
 * Assign a task to a user or group of users ( Would require admin privileges )
 * Communicate with other rescue workers or victims
 
+**LimeLight** also has a **Drone Management Interface**. Recuers can connect to an army of Drones via **LimeLight** and use them for aerial survelliance. On spotting a victim the rescuer can mark the victim by retrieving the Drone's GPS location and send it to the central server which is then broadcasted to other rescuers.
+
 In this way **LimeLight** would provide an ecosystem to orchestrate rescue operations in a fast and elegant manner.
 
 
