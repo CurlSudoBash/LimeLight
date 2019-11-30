@@ -129,9 +129,11 @@ public class MainActivity extends AppCompatActivity implements WifiP2pManager.Ch
                             String userName = userNameEditText.getText().toString();
                             String password = passwordEditText.getText().toString();
                             Log.d("password", password);
-                            if (password.equals("a")) {
+                            if (password.equals("limelight")) {
                                 Intent intent = new Intent(getApplicationContext(), SpecifyRole.class);
                                 startActivity(intent);
+                            } else {
+                                toastMsg("Invalid Password");
                             }
 /*
                             // Create data for the listview.
